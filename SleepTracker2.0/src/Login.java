@@ -11,7 +11,7 @@ import javax.swing.JFormattedTextField;
 import java.awt.Font;
 import javax.swing.JTextField;
 
-public class Login {
+public class Login extends Main{
 
 	private JFrame frame;
 	private JPasswordField passwordField_1;
@@ -32,6 +32,9 @@ public class Login {
 			}
 		});
 	}
+	public JFrame get() {
+		return frame;
+	}
 
 	/**
 	 * Create the application.
@@ -43,7 +46,7 @@ public class Login {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	 private void initialize() {
+	 public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +69,17 @@ public class Login {
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
+				Signup newUser = new Signup();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Signup window = new Signup();
+							window.get().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnSignUp.setBackground(Color.WHITE);

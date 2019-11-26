@@ -3,17 +3,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JFormattedTextField;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.Window;
 
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
-public class Signup extends Login{
+public class Signup extends Main{
 
 	private JFrame frame;
 	private JPasswordField passwordField_1;
@@ -34,6 +36,9 @@ public class Signup extends Login{
 			}
 		});
 	}
+	public JFrame get() {
+		return frame;
+	}
 
 	/**
 	 * Create the application.
@@ -47,6 +52,7 @@ public class Signup extends Login{
 	 */
 	public void initialize() {
 		frame = new JFrame();
+		Container random = new Container();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -72,12 +78,20 @@ public class Signup extends Login{
 		label_1.setBounds(76, 127, 56, 16);
 		label_1.setBackground(Color.WHITE);
 		frame.getContentPane().add(label_1);
-		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(290, 204, 97, 25);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Login user = new Login();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Login window = new Login();
+							window.get().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnLogin.setBackground(Color.WHITE);
