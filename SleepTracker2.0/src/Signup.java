@@ -1,4 +1,8 @@
 import java.awt.EventQueue;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.JFrame;
 import javax.swing.JFormattedTextField;
@@ -16,15 +20,24 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
 public class Signup extends Main{
-
+	
+//	public static File f = new File ("c:/Users/s-sluisj/user.txt");
 	private JFrame frame;
 	private JPasswordField passwordField_1;
 	private JTextField textField;
-
+	
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
+		String user = "test test";
+		try {
+			write(user);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -101,5 +114,31 @@ public class Signup extends Main{
 		textField.setBounds(76, 92, 214, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+	}
+	public static void write(String s) throws IOException {
+		 FileWriter fw = null;
+	        BufferedWriter bw = null;
+	        PrintWriter pw = null;
+
+	        try {
+	            fw = new FileWriter("c:/Users/s-sluisj/user.txt", true);
+	            bw = new BufferedWriter(fw);
+	            pw = new PrintWriter(bw);
+
+	            pw.println(s);
+	            
+
+	            System.out.println("Data Successfully appended into file");
+	            pw.flush();
+
+	        } finally {
+	            try {
+	                pw.close();
+	                bw.close();
+	                fw.close();
+	            } catch (IOException io) {// can't do anything }
+	            }
+
+	        }
 	}
 }

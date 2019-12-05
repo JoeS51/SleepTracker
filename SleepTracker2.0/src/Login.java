@@ -70,16 +70,8 @@ public class Login extends Main{
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Signup newUser = new Signup();
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Signup window = new Signup();
-							window.get().setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				newUser.get().setVisible(true);
+//				frame.setContentPane(newUser.get().getContentPane());
 			}
 		});
 		btnSignUp.setBackground(Color.WHITE);
