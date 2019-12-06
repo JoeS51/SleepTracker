@@ -8,16 +8,20 @@ import javax.swing.JFrame;
 import javax.swing.JFormattedTextField;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Window;
 
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class Signup extends Main{
 	
@@ -66,33 +70,47 @@ public class Signup extends Main{
 	public void initialize() {
 		frame = new JFrame();
 		Container random = new Container();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JFormattedTextField frmtdtxtfldWelcomeToSleep = new JFormattedTextField();
-		frmtdtxtfldWelcomeToSleep.setBounds(28, 13, 347, 43);
-		frmtdtxtfldWelcomeToSleep.setText("Welcome To Sleep Tracker");
-		frmtdtxtfldWelcomeToSleep.setForeground(Color.WHITE);
+		frmtdtxtfldWelcomeToSleep.setBounds(12, 13, 347, 43);
+		frmtdtxtfldWelcomeToSleep.setText("Welcome To Sleep Tracker!");
+		frmtdtxtfldWelcomeToSleep.setForeground(Color.BLACK);
 		frmtdtxtfldWelcomeToSleep.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		frmtdtxtfldWelcomeToSleep.setBackground(Color.BLACK);
+		frmtdtxtfldWelcomeToSleep.setBackground(Color.ORANGE);
 		frame.getContentPane().add(frmtdtxtfldWelcomeToSleep);
 		
-		JLabel lblSignup = new JLabel("Signup");
-		lblSignup.setBounds(76, 69, 56, 16);
+		ImageIcon sleep_icon = new ImageIcon("moon.jpg");
+		
+		JLabel sleep;
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 0, 0);
+		panel.setBackground(Color.white);
+		panel.setPreferredSize(new Dimension (200, 300));
+		
+		frame.getContentPane().add(panel);
+		
+		JLabel lblSignup = new JLabel("Sign Up:");
+		lblSignup.setBounds(12, 69, 56, 16);
 		lblSignup.setBackground(Color.WHITE);
 		frame.getContentPane().add(lblSignup);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(76, 145, 214, 22);
+		passwordField_1.setBounds(12, 145, 214, 22);
 		frame.getContentPane().add(passwordField_1);
 		
 		JLabel label_1 = new JLabel("Password");
 		label_1.setBounds(76, 127, 56, 16);
 		label_1.setBackground(Color.WHITE);
 		frame.getContentPane().add(label_1);
+
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(290, 204, 97, 25);
+		btnLogin.setBounds(129, 219, 97, 25);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
@@ -107,13 +125,28 @@ public class Signup extends Main{
 				});
 			}
 		});
-		btnLogin.setBackground(Color.WHITE);
 		frame.getContentPane().add(btnLogin);
 		
 		textField = new JTextField();
-		textField.setBounds(76, 92, 214, 22);
+		textField.setBounds(12, 92, 214, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		
+		JButton btnSignUpNow = new JButton(" Sign Up");
+		btnSignUpNow.setBounds(129, 181, 97, 25);
+		frame.getContentPane().add(btnSignUpNow);
+		
+		sleep = new JLabel("", new ImageIcon("C:\\Users\\s-tzenc\\Documents\\sleep\\panda.png"), SwingConstants.CENTER);
+		sleep.setBounds(169, 35, 304, 209);
+		frame.getContentPane().add(sleep);
+		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
+		sleep.setVerticalTextPosition(SwingConstants.BOTTOM);
+		
+		JLabel lblAlreadyAMember = new JLabel("Already a member?");
+		lblAlreadyAMember.setBackground(Color.WHITE);
+		lblAlreadyAMember.setBounds(12, 223, 132, 16);
+		frame.getContentPane().add(lblAlreadyAMember);
+		frame.setVisible(true);
 	}
 	public static void write(String s) throws IOException {
 		 FileWriter fw = null;
