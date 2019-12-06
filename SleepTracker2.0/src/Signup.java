@@ -154,7 +154,7 @@ public class Signup extends Main{
 	        PrintWriter pw = null;
 
 	        try {
-	            fw = new FileWriter("c:/Users/s-sluisj/user.txt", true);
+	            fw = new FileWriter("c:/Users/s-tzenc/user.txt", true);
 	            bw = new BufferedWriter(fw);
 	            pw = new PrintWriter(bw);
 
