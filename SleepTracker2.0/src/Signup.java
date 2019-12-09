@@ -27,21 +27,16 @@ public class Signup extends Main{
 	
 //	public static File f = new File ("c:/Users/s-sluisj/user.txt");
 	private JFrame frame;
-	private JPasswordField passwordField_1;
-	private JTextField textField;
-	
+	private static JPasswordField passwordField_1;
+	private static JTextField textField;
+	private static String passWord = "";
+	private static String userName = "";
 	/**
 	 * Launch the application.
 	 * @throws IOException 
 	 */
 	public static void main(String[] args)  {
-		String user = "test test";
-		try {
-			write(user);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -95,7 +90,7 @@ public class Signup extends Main{
 		
 		frame.getContentPane().add(panel);
 		
-		JLabel lblSignup = new JLabel("Sign Up:");
+		JLabel lblSignup = new JLabel("Sign Up");
 		lblSignup.setBounds(12, 69, 56, 16);
 		lblSignup.setBackground(Color.WHITE);
 		frame.getContentPane().add(lblSignup);
@@ -104,10 +99,10 @@ public class Signup extends Main{
 		passwordField_1.setBounds(12, 145, 214, 22);
 		frame.getContentPane().add(passwordField_1);
 		
-		JLabel label_1 = new JLabel("Password");
-		label_1.setBounds(76, 127, 56, 16);
-		label_1.setBackground(Color.WHITE);
-		frame.getContentPane().add(label_1);
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(12, 127, 120, 16);
+		lblPassword.setBackground(Color.WHITE);
+		frame.getContentPane().add(lblPassword);
 
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(129, 219, 97, 25);
@@ -133,10 +128,23 @@ public class Signup extends Main{
 		textField.setColumns(10);
 		
 		JButton btnSignUpNow = new JButton(" Sign Up");
+		btnSignUpNow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userName = textField.getText();
+				passWord = passwordField_1.getText();
+				try {
+					write(userName, passWord);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				//erase 
+			}
+		});
 		btnSignUpNow.setBounds(129, 181, 97, 25);
 		frame.getContentPane().add(btnSignUpNow);
 		
-		sleep = new JLabel("", new ImageIcon("C:\\Users\\s-tzenc\\Documents\\sleep\\panda.png"), SwingConstants.CENTER);
+		sleep = new JLabel("", new ImageIcon("C:\\Users\\s-sluisj\\Documents\\panda.png"), SwingConstants.CENTER);
 		sleep.setBounds(169, 35, 304, 209);
 		frame.getContentPane().add(sleep);
 		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -148,20 +156,28 @@ public class Signup extends Main{
 		frame.getContentPane().add(lblAlreadyAMember);
 		frame.setVisible(true);
 	}
-	public static void write(String s) throws IOException {
+	public static void write(String u, String p) throws IOException {
 		 FileWriter fw = null;
 	        BufferedWriter bw = null;
 	        PrintWriter pw = null;
 
 	        try {
-	            fw = new FileWriter("c:/Users/s-tzenc/user.txt", true);
+	            fw = new FileWriter("c:/Users/s-sluisj/user.txt", true);
 	            bw = new BufferedWriter(fw);
 	            pw = new PrintWriter(bw);
-
-	            pw.println(s);
+	            if(!u.equals("")) {
+	            	pw.print("Username: "+ u);
+	            	pw.println(" Password: " +p);
+	            	System.out.println("Data Successfully appended into file");
+	            	textField.setText("");
+					passwordField_1.setText("");
+	            }
+	            else {
+	            	System.out.println("Nothing entered as username");
+	            }
 	            
 
-	            System.out.println("Data Successfully appended into file");
+	            
 	            pw.flush();
 
 	        } finally {
