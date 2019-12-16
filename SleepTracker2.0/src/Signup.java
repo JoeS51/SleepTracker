@@ -113,6 +113,7 @@ public class Signup extends Main{
 						try {
 							Login window = new Login();
 							window.get().setVisible(true);
+							frame.dispose();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

@@ -10,6 +10,9 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JFormattedTextField;
 import java.awt.Font;
@@ -21,8 +24,9 @@ public class Login extends Main{
 	private JFrame frame;
 	private JPasswordField passwordField_1;
 	private JTextField textField;
-	private String userName;
-	private String passWord;
+	private static String userName = "";
+	private static String passWord = "";
+	private static boolean isUser;
 	/**
 	 * Launch the application.
 	 */
@@ -93,6 +97,7 @@ public class Login extends Main{
 			public void actionPerformed(ActionEvent arg0) {
 				Signup newUser = new Signup();
 				newUser.get().setVisible(true);
+				frame.dispose();
 //				frame.setContentPane(newUser.get().getContentPane());
 			}
 		});
@@ -108,6 +113,38 @@ public class Login extends Main{
 		frame.getContentPane().add(frmtdtxtfldSleepTracker);
 		
 		JButton btnSignIn = new JButton("Sign In");
+		btnSignIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userName = textField.getText();
+				passWord = passwordField_1.getText();
+				isUser = false;
+				File file = new File("c:/Users/s-sluisj/user.txt");
+				try {
+					Scanner scanner = new Scanner(file);
+					int lineNum = 0;
+					while (scanner.hasNextLine()) {
+						String line = scanner.nextLine();
+						String u = line.substring(10, line.indexOf("Password:")-1);
+						String p = line.substring(line.lastIndexOf(':')+2, line.length());
+						lineNum++;
+						if(userName.equals(u)&&passWord.equals(p)) { 
+							System.out.println("ho hum, i found it on line " +lineNum);
+							isUser = true;
+						}
+					}
+				} catch(FileNotFoundException e1) { 
+					e1.printStackTrace();
+				}
+				if(isUser) {
+					MainPage newUser = new MainPage();
+					newUser.get().setVisible(true);
+					frame.dispose();	
+				}
+				else {
+					System.out.println("username or password is wrong");
+				}
+			}
+		});
 		btnSignIn.setBounds(143, 191, 97, 25);
 		frame.getContentPane().add(btnSignIn);
 		
