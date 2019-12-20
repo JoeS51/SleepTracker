@@ -157,6 +157,8 @@ public class Signup extends Main{
 		frame.getContentPane().add(lblAlreadyAMember);
 		frame.setVisible(true);
 	}
+	
+	//write into file
 	public static void write(String u, String p) throws IOException {
 		 FileWriter fw = null;
 	        BufferedWriter bw = null;
