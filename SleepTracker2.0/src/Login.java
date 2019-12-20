@@ -118,7 +118,7 @@ public class Login extends Main{
 				userName = textField.getText();
 				passWord = passwordField_1.getText();
 				isUser = false;
-				File file = new File("c:/Users/s-sluisj/user.txt");
+				File file = new File("src/users.txt");
 				try {
 					Scanner scanner = new Scanner(file);
 					int lineNum = 0;
