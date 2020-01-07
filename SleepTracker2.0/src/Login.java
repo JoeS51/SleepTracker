@@ -155,6 +155,7 @@ public class Login extends Main{
 		frame.getContentPane().add(btnSignIn);
 		
 		textField = new JTextField();
+		//delet this if u see it
 		textField.setBounds(12, 103, 228, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
