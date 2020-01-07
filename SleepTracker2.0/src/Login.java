@@ -65,9 +65,11 @@ public class Login extends Main{
 		
 		ImageIcon sleep_icon = new ImageIcon("download.jpg");
 		
+		//sleep label
 		JLabel sleep;
 		frame.getContentPane().setLayout(null);
 		
+		//panel
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 0, 0);
 		panel.setBackground(Color.white);
@@ -75,12 +77,14 @@ public class Login extends Main{
 		
 		frame.getContentPane().add(panel);
 		
+		//login label
 		JLabel lblLogin = new JLabel("Login");
 		lblLogin.setBounds(12, 80, 56, 16);
 		lblLogin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblLogin.setBackground(Color.WHITE);
 		frame.getContentPane().add(lblLogin);
 		
+		//password label
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setBounds(12, 138, 214, 16);
 		lblPassword.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
@@ -91,6 +95,7 @@ public class Login extends Main{
 		passwordField_1.setBounds(12, 156, 228, 22);
 		frame.getContentPane().add(passwordField_1);
 		
+		//signup button
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.setBounds(12, 191, 97, 25);
 		btnSignUp.addActionListener(new ActionListener() {
@@ -112,6 +117,7 @@ public class Login extends Main{
 		frmtdtxtfldSleepTracker.setText("SLEEP TRACKER");
 		frame.getContentPane().add(frmtdtxtfldSleepTracker);
 		
+		//sign-in button
 		JButton btnSignIn = new JButton("Sign In");
 		btnSignIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -149,6 +155,7 @@ public class Login extends Main{
 		frame.getContentPane().add(btnSignIn);
 		
 		textField = new JTextField();
+		//delet this if u see it
 		textField.setBounds(12, 103, 228, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
