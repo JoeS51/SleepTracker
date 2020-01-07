@@ -136,7 +136,7 @@ public class Login extends Main{
 					e1.printStackTrace();
 				}
 				if(isUser) {
-					MainPage newUser = new MainPage();
+					MainPage newUser = new MainPage(userName);
 					newUser.get().setVisible(true);
 					frame.dispose();	
 				}
