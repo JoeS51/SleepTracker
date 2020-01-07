@@ -20,6 +20,7 @@ public class MainPage {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			//test
 			public void run() {
 				try {
 					MainPage window = new MainPage(username);
