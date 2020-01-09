@@ -145,7 +145,7 @@ public class Signup extends Main{
 		btnSignUpNow.setBounds(129, 181, 97, 25);
 		frame.getContentPane().add(btnSignUpNow);
 		
-		sleep = new JLabel("", new ImageIcon("C:\\Users\\s-sluisj\\Documents\\panda.png"), SwingConstants.CENTER);
+		sleep = new JLabel("", new ImageIcon("src/panda.png"), SwingConstants.CENTER);
 		sleep.setBounds(169, 35, 304, 209);
 		frame.getContentPane().add(sleep);
 		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -160,15 +160,29 @@ public class Signup extends Main{
 	
 	//write into file
 	public static void write(String u, String p) throws IOException {
-		 FileWriter fw = null;
+		 	FileWriter fw = null;
 	        BufferedWriter bw = null;
 	        PrintWriter pw = null;
-
+	        BufferedReader b;
 	        try {
+	        	b = new BufferedReader(new FileReader("src/users.txt"));
+	        	String line = b.readLine();
+	        	String temp;
+	        	boolean al = false;
+	        	while(line!=null) {
+	        		temp = line.substring(9+1,line.indexOf("Password: ")-1);
+	        		if(temp.equals(u)) {
+	        			al = true;
+	        		}
+	        		line = b.readLine();
+	        	}
 	            fw = new FileWriter("src/users.txt", true);
 	            bw = new BufferedWriter(fw);
 	            pw = new PrintWriter(bw);
-	            if(!u.equals("")) {
+	            if(al == true) {
+	            	System.out.println("User with same username exists.");
+	            }
+	            else if(!u.equals("")) {
 	            	pw.print("Username: "+ u);
 	            	pw.println(" Password: " +p);
 	            	System.out.println("Data Successfully appended into file");

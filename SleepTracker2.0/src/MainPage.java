@@ -6,13 +6,20 @@ import javax.swing.SwingConstants;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainPage {
 	private String[] a = {"Don't drink caffeine before you go to bed", 
 						  "Get at least 8 hours of sleep each night", 
 						  "Make sure that your bed supports your back",
 						  "Try not to look at screens before you go to bed",
-						  "Reduce irregular naps as it can mess up your internal clock"};
+						  "Reduce irregular naps as it can mess up your circadian rhythm",
+						  "Try to sleep and wake up at consisten times",
+						  "Exercise daily for better sleep",
+						  "If you have trouble sleeping, get professional help",
+						  };
 	private JFrame frame;
 	private static String username;
 	/**
@@ -53,7 +60,7 @@ public class MainPage {
 		
 		JLabel lblHomePage = new JLabel("Welcome back, " + username, SwingConstants.CENTER);
 		lblHomePage.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblHomePage.setBounds(0, 0, 747, 50);
+		lblHomePage.setBounds(8, 42, 747, 50);
 		frame.getContentPane().add(lblHomePage);
 		
 		JLabel lblTips = new JLabel("Tip: ");
@@ -65,5 +72,16 @@ public class MainPage {
 		lblNull.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNull.setBounds(122, 302, 625, 155);
 		frame.getContentPane().add(lblNull);
+		
+		JButton btnNewButton = new JButton("<-");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Login back = new Login();
+				back.get();
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(12, 13, 47, 25);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

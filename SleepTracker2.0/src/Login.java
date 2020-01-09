@@ -160,7 +160,7 @@ public class Login extends Main{
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		sleep = new JLabel("", new ImageIcon("C:\\Users\\s-sluisj\\Documents\\download.jpg"), SwingConstants.CENTER);
+		sleep = new JLabel("", new ImageIcon("src/download.jpg"), SwingConstants.CENTER);
 		sleep.setBounds(167, 0, 304, 209);
 		frame.getContentPane().add(sleep);
 		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
