@@ -6,6 +6,8 @@ import javax.swing.SwingConstants;
 
 import java.awt.Font;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -70,7 +72,7 @@ public class MainPage {
 		String rand = a[(int) (Math.random()*5)];
 		JLabel lblNull = new JLabel(rand);
 		lblNull.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNull.setBounds(122, 302, 625, 155);
+		lblNull.setBounds(85, 302, 625, 155);
 		frame.getContentPane().add(lblNull);
 		
 		JButton btnNewButton = new JButton("<-");
@@ -83,5 +85,14 @@ public class MainPage {
 		});
 		btnNewButton.setBounds(12, 13, 47, 25);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnWeeklyTracker = new JButton("Weekly Tracker");
+		btnWeeklyTracker.setBounds(596, 425, 139, 25);
+		frame.getContentPane().add(btnWeeklyTracker);
+		JLabel sleep = new JLabel("", new ImageIcon("src/download (1).jpg"), SwingConstants.CENTER);
+		sleep.setBounds(70, 60, 130, 120);
+		frame.getContentPane().add(sleep);
+		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
+		sleep.setVerticalTextPosition(SwingConstants.BOTTOM);
 	}
 }
