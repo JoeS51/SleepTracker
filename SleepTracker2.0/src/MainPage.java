@@ -40,7 +40,6 @@ public class MainPage {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
@@ -65,15 +64,10 @@ public class MainPage {
 		lblHomePage.setBounds(8, 42, 747, 50);
 		frame.getContentPane().add(lblHomePage);
 		
-		JLabel lblTips = new JLabel("Tip: ");
+		JLabel lblTips = new JLabel("Tip: " + a[(int) (Math.random()*5)], SwingConstants.CENTER);
 		lblTips.setFont(new Font("Tahoma", Font.PLAIN, 41));
 		lblTips.setBounds(8, 331, 102, 80);
 		frame.getContentPane().add(lblTips);
-		String rand = a[(int) (Math.random()*5)];
-		JLabel lblNull = new JLabel(rand);
-		lblNull.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNull.setBounds(85, 302, 625, 155);
-		frame.getContentPane().add(lblNull);
 		
 		JButton btnNewButton = new JButton("<-");
 		btnNewButton.addActionListener(new ActionListener() {
