@@ -13,3 +13,4 @@ Username: joe Password: joe
 Username: joe Password: joe
 Username: sean  Password: conti
 Username: sean Password: conti
+Username: Pikachu Password: gei

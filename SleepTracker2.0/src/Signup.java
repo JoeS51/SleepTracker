@@ -103,7 +103,9 @@ public class Signup extends Main{
 		lblPassword.setBounds(12, 127, 120, 16);
 		lblPassword.setBackground(Color.WHITE);
 		frame.getContentPane().add(lblPassword);
-
+		
+		
+		//login button
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(129, 219, 97, 25);
 		btnLogin.addActionListener(new ActionListener() {
@@ -128,6 +130,7 @@ public class Signup extends Main{
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		//sign up button
 		JButton btnSignUpNow = new JButton(" Sign Up");
 		btnSignUpNow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -169,6 +172,7 @@ public class Signup extends Main{
 	        	String line = b.readLine();
 	        	String temp;
 	        	boolean al = false;
+	        	//check every username in the file
 	        	while(line!=null) {
 	        		temp = line.substring(9+1,line.indexOf("Password: ")-1);
 	        		if(temp.equals(u)) {
@@ -179,9 +183,11 @@ public class Signup extends Main{
 	            fw = new FileWriter("src/users.txt", true);
 	            bw = new BufferedWriter(fw);
 	            pw = new PrintWriter(bw);
+	            //if found same username
 	            if(al == true) {
 	            	System.out.println("User with same username exists.");
 	            }
+	            //sequence to allow username
 	            else if(!u.equals("")) {
 	            	pw.print("Username: "+ u);
 	            	pw.println(" Password: " +p);

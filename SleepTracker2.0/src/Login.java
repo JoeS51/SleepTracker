@@ -155,11 +155,11 @@ public class Login extends Main{
 		frame.getContentPane().add(btnSignIn);
 		
 		textField = new JTextField();
-		//delet this if u see it
 		textField.setBounds(12, 103, 228, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		//download page image
 		sleep = new JLabel("", new ImageIcon("src/download.jpg"), SwingConstants.CENTER);
 		sleep.setBounds(167, 0, 304, 209);
 		frame.getContentPane().add(sleep);

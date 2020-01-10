@@ -69,6 +69,7 @@ public class MainPage {
 		lblTips.setBounds(8, 331, 102, 80);
 		frame.getContentPane().add(lblTips);
 		
+		//back button (return to sign in/up)
 		JButton btnNewButton = new JButton("<-");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -80,6 +81,7 @@ public class MainPage {
 		btnNewButton.setBounds(12, 13, 47, 25);
 		frame.getContentPane().add(btnNewButton);
 		
+		//weekly tracker button
 		JButton btnWeeklyTracker = new JButton("Weekly Tracker");
 		btnWeeklyTracker.setBounds(596, 425, 139, 25);
 		frame.getContentPane().add(btnWeeklyTracker);
