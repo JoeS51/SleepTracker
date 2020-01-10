@@ -2,11 +2,15 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Timer {
+public class Timerr {
 
 	private JFrame frame;
-
+	private double start;
+	private double stop;
 	/**
 	 * Launch the application.
 	 */
@@ -14,7 +18,7 @@ public class Timer {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Timer window = new Timer();
+					Timerr window = new Timerr();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -26,7 +30,7 @@ public class Timer {
 	/**
 	 * Create the application.
 	 */
-	public Timer() {
+	public Timerr() {
 		initialize();
 	}
 
@@ -40,12 +44,29 @@ public class Timer {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("Start");
-		btnNewButton.setBounds(231, 91, 97, 25);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				start = System.currentTimeMillis();
+			}
+		});
+		btnNewButton.setBounds(86, 91, 97, 25);
 		frame.getContentPane().add(btnNewButton);
-		
+
+		JLabel label = new JLabel("<Dynamic>");
+		label.setBounds(145, 47, 236, 16);
+		frame.getContentPane().add(label);
 		JButton btnStop = new JButton("Stop");
-		btnStop.setBounds(49, 91, 97, 25);
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stop = System.currentTimeMillis();
+				int hours = (int)(stop - start)/600;
+				int minutes = (int)(((stop -start)/600)/60);
+				label.setText("Hours: "+hours+"Minutes: "+minutes);
+			}
+		});
+		btnStop.setBounds(232, 91, 97, 25);
 		frame.getContentPane().add(btnStop);
+		
 	}
 
 }
