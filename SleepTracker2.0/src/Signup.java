@@ -70,13 +70,13 @@ public class Signup extends Main{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JFormattedTextField frmtdtxtfldWelcomeToSleep = new JFormattedTextField();
-		frmtdtxtfldWelcomeToSleep.setBounds(12, 13, 347, 43);
-		frmtdtxtfldWelcomeToSleep.setText("Welcome To Sleep Tracker!");
-		frmtdtxtfldWelcomeToSleep.setForeground(Color.BLACK);
-		frmtdtxtfldWelcomeToSleep.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		frmtdtxtfldWelcomeToSleep.setBackground(Color.ORANGE);
-		frame.getContentPane().add(frmtdtxtfldWelcomeToSleep);
+		JLabel lblWelcomeToSleep = new JLabel("Welcome To Sleep Tracker!");
+		lblWelcomeToSleep.setBounds(12, 13, 347, 43);
+		lblWelcomeToSleep.setText("Welcome To Sleep Tracker!");
+		lblWelcomeToSleep.setForeground(Color.BLACK);
+		lblWelcomeToSleep.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		lblWelcomeToSleep.setBackground(Color.ORANGE);
+		frame.getContentPane().add(lblWelcomeToSleep);
 		
 		ImageIcon sleep_icon = new ImageIcon("moon.jpg");
 		
@@ -145,7 +145,7 @@ public class Signup extends Main{
 				//erase 
 			}
 		});
-		btnSignUpNow.setBounds(129, 181, 97, 25);
+		btnSignUpNow.setBounds(32, 181, 174, 25);
 		frame.getContentPane().add(btnSignUpNow);
 		
 		sleep = new JLabel("", new ImageIcon("src/panda.png"), SwingConstants.CENTER);

@@ -64,9 +64,9 @@ public class MainPage {
 		lblHomePage.setBounds(8, 42, 747, 50);
 		frame.getContentPane().add(lblHomePage);
 		
-		JLabel lblTips = new JLabel("Tip: " + a[(int) (Math.random()*5)], SwingConstants.CENTER);
-		lblTips.setFont(new Font("Tahoma", Font.PLAIN, 41));
-		lblTips.setBounds(8, 331, 102, 80);
+		JLabel lblTips = new JLabel("Tip: " + a[(int) (Math.random()*5)] + ".", SwingConstants.CENTER);
+		lblTips.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		lblTips.setBounds(8, 382, 727, 41);
 		frame.getContentPane().add(lblTips);
 		
 		//back button (return to sign in/up)

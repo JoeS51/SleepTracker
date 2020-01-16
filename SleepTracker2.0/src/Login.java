@@ -97,7 +97,7 @@ public class Login extends Main{
 		
 		//signup button
 		JButton btnSignUp = new JButton("Sign Up");
-		btnSignUp.setBounds(12, 191, 97, 25);
+		btnSignUp.setBounds(323, 215, 97, 25);
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Signup newUser = new Signup();
@@ -108,14 +108,13 @@ public class Login extends Main{
 		});
 		frame.getContentPane().add(btnSignUp);
 		
-		JFormattedTextField frmtdtxtfldSleepTracker = new JFormattedTextField();
-		frmtdtxtfldSleepTracker.setBounds(12, 24, 200, 43);
-		frmtdtxtfldSleepTracker.setHorizontalAlignment(SwingConstants.CENTER);
-		frmtdtxtfldSleepTracker.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		frmtdtxtfldSleepTracker.setForeground(Color.BLACK);
-		frmtdtxtfldSleepTracker.setBackground(Color.ORANGE);
-		frmtdtxtfldSleepTracker.setText("SLEEP TRACKER");
-		frame.getContentPane().add(frmtdtxtfldSleepTracker);
+		JLabel lblSleepTracker = new JLabel("SLEEP TRACKER");
+		lblSleepTracker.setBounds(12, 24, 200, 43);
+		lblSleepTracker.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSleepTracker.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
+		lblSleepTracker.setForeground(Color.BLACK);
+		lblSleepTracker.setBackground(Color.ORANGE);
+		frame.getContentPane().add(lblSleepTracker);
 		
 		//sign-in button
 		JButton btnSignIn = new JButton("Sign In");
@@ -151,7 +150,7 @@ public class Login extends Main{
 				}
 			}
 		});
-		btnSignIn.setBounds(143, 191, 97, 25);
+		btnSignIn.setBounds(35, 191, 182, 25);
 		frame.getContentPane().add(btnSignIn);
 		
 		textField = new JTextField();
