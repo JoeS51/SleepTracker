@@ -19,7 +19,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class Login extends Main{
+public class Login{
 
 	private JFrame frame;
 	private JPasswordField passwordField_1;

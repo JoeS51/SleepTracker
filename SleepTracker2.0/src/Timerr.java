@@ -1,10 +1,14 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class Timerr {
 
@@ -46,14 +50,14 @@ public class Timerr {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 1000, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		
 		JLabel label = new JLabel("Click start to start timer");
-		label.setBounds(145, 47, 236, 16);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 34));
+		label.setBounds(195, 13, 439, 84);
 		frame.getContentPane().add(label);
 		if(!won) {
 			stop = System.currentTimeMillis();
@@ -93,6 +97,12 @@ public class Timerr {
 				else {
 				start = System.currentTimeMillis();
 				label.setText("Started");
+				JLabel timer;
+				timer = new JLabel("", new ImageIcon("src/msg_loader.gif"), SwingConstants.CENTER);
+				timer.setBounds(200, 300, 500, 500);
+				frame.getContentPane().add(timer);
+				timer.setHorizontalTextPosition(SwingConstants.LEFT);
+				timer.setVerticalTextPosition(SwingConstants.BOTTOM);
 				}
 			}
 		});

@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class Signup extends Main{
+public class Signup{
 	
 //	public static File f = new File ("c:/Users/s-sluisj/user.txt");
 	private JFrame frame;
