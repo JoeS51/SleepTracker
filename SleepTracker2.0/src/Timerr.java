@@ -57,7 +57,7 @@ public class Timerr {
 		frame.getContentPane().setLayout(null);
 		JLabel label = new JLabel("Click start to start timer");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 34));
-		label.setBounds(195, 13, 439, 84);
+		label.setBounds(195, 13, 775, 84);
 		frame.getContentPane().add(label);
 		if(!won) {
 			stop = System.currentTimeMillis();

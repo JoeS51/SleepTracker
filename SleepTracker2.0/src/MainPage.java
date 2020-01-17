@@ -84,7 +84,15 @@ public class MainPage {
 		//weekly tracker button
 		JButton btnWeeklyTracker = new JButton("Weekly Tracker");
 		btnWeeklyTracker.setBounds(596, 425, 139, 25);
+		btnWeeklyTracker.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Days weekdays = new Days();
+				weekdays.get().setVisible(true);
+				frame.dispose();
+			}
+		});
 		frame.getContentPane().add(btnWeeklyTracker);
+		
 		JLabel sleep = new JLabel("", new ImageIcon("src/download (1).jpg"), SwingConstants.CENTER);
 		sleep.setBounds(70, 60, 130, 120);
 		frame.getContentPane().add(sleep);
