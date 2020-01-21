@@ -15,7 +15,7 @@ public class Days {
 	private JFrame frame;
 	private JTable table;
 	private JButton button;
-	
+	private String day;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,7 +32,10 @@ public class Days {
 	public Days() {
 		initialize();
 	}
-	
+	public Days(String day) {
+		this.day = day;
+		initialize();
+	}
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 765, 510);
@@ -77,6 +80,17 @@ public class Days {
 		});
 		button.setBounds(0, 0, 97, 25);
 		frame.getContentPane().add(button);
+		
+		JButton btnRecordTime = new JButton("Record Time");
+		btnRecordTime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Timerr record = new Timerr();
+				record.get().setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnRecordTime.setBounds(0, 45, 97, 25);
+		frame.getContentPane().add(btnRecordTime);
 	}	
 	
 	public JFrame get() {

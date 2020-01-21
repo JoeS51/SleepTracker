@@ -113,7 +113,7 @@ public class Timerr {
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				start = 0;
-				if(label.getText() == "Started") {
+				if(label.getText() == "Started" || label.getText().indexOf("Hours") != -1) {
 					label.setText("Click start to start timer");
 				}
 			}
@@ -122,6 +122,13 @@ public class Timerr {
 		frame.getContentPane().add(btnReset);
 		
 		JButton btnNextPage = new JButton("Next Page");
+		btnNextPage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Record record = new Record();
+				record.get().setVisible(true);
+				frame.dispose();
+			}
+		});
 		btnNextPage.setBounds(323, 193, 97, 25);
 		frame.getContentPane().add(btnNextPage);
 
