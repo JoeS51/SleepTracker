@@ -47,6 +47,9 @@ public class MainPage {
 		this.username = username;
 		initialize();
 	}
+	public MainPage() {
+		initialize();
+	}
 	public JFrame get() {
 		return frame;
 	}

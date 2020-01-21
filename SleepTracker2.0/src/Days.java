@@ -7,10 +7,14 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Days {
 	private JFrame frame;
 	private JTable table;
+	private JButton button;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -39,7 +43,7 @@ public class Days {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"},
-				{null, null, null, null, null, null, null, null},
+				{null , null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
@@ -60,8 +64,19 @@ public class Days {
 		
 		JLabel lblNewLabel = new JLabel("Your Stats for this Week:", SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 55));
-		lblNewLabel.setBounds(0, 0, 747, 81);
+		lblNewLabel.setBounds(98, 0, 659, 81);
 		frame.getContentPane().add(lblNewLabel);
+		
+		button = new JButton("<-");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainPage back = new MainPage();
+				back.get().setVisible(true);
+				frame.dispose();
+			}
+		});
+		button.setBounds(0, 0, 97, 25);
+		frame.getContentPane().add(button);
 	}	
 	
 	public JFrame get() {

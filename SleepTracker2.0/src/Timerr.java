@@ -64,7 +64,7 @@ public class Timerr {
 			int seconds = (int)((stop - start)/1000)%60;
 			int minutes = (int)((stop-start)/60000)%60;
 			int hours = (int)((stop - start)/600000);
-			label.setText("Hours: "+hours+" Minutes: "+minutes + "Seconds: "+seconds);
+			label.setText("Hours: "+hours+" Minutes: "+minutes + " Seconds: "+seconds);
 		}
 		JButton btnStop = new JButton("Stop");
 		btnStop.addActionListener(new ActionListener() {
