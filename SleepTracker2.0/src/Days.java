@@ -54,7 +54,7 @@ public class Days {
 			}
 		}
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1045, 375);
+		frame.setBounds(100, 100, 1034, 344);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -65,9 +65,27 @@ public class Days {
 		if(input) {
 			table.setValueAt(hours, 1, column);
 		}
-		table.setRowHeight(43);
-		table.setBounds(0, 82, 1015, 233);
-		frame.getContentPane().add(table);
+		
+		JButton btnRecordTime = new JButton("Record Time");
+		btnRecordTime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Timerr record = new Timerr();
+				record.get().setVisible(true);
+				frame.dispose();
+			}
+		});
+		
+		JButton btnRecord = new JButton("Record");
+		btnRecord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Timerr time = new Timerr();
+				time.get().setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnRecord.setBounds(919, 0, 97, 25);
+		frame.getContentPane().add(btnRecord);
+		frame.getContentPane().add(btnRecordTime);
 		
 		button = new JButton("<-");
 		button.addActionListener(new ActionListener() {
@@ -82,30 +100,12 @@ public class Days {
 		
 		JLabel lblNewLabel = new JLabel("Your Stats for this Week:", SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 55));
-		lblNewLabel.setBounds(0, 0, 747, 81);
+		lblNewLabel.setBounds(0, 0, 1016, 81);
 		frame.getContentPane().add(lblNewLabel);
-		
-		JButton btnRecordTime = new JButton("Record Time");
-		btnRecordTime.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Timerr record = new Timerr();
-				record.get().setVisible(true);
-				frame.dispose();
-			}
-		});
-		lblNewLabel.setBounds(0, 0, 747, 81);
-		frame.getContentPane().add(btnRecordTime);
-		
-		JButton btnRecord = new JButton("Record");
-		btnRecord.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Timerr time = new Timerr();
-				time.get().setVisible(true);
-				frame.dispose();
-			}
-		});
-		btnRecord.setBounds(873, 13, 97, 25);
-		frame.getContentPane().add(btnRecord);
+		lblNewLabel.setBounds(0, 0, 1016, 81);
+		table.setRowHeight(43);
+		table.setBounds(0, 82, 1015, 233);
+		frame.getContentPane().add(table);
 	}	
 	
 	public JFrame get() {

@@ -1,3 +1,4 @@
+import java.awt.Component;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -52,12 +53,12 @@ public class Timerr {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 800);
+		frame.setBounds(100, 100, 626, 494);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		JLabel label = new JLabel("Click start to start timer");
+		JLabel label = new JLabel("Click start to start timer", SwingConstants.CENTER);
 		label.setFont(new Font("Tahoma", Font.PLAIN, 34));
-		label.setBounds(195, 13, 775, 84);
+		label.setBounds(0, 13, 607, 84);
 		frame.getContentPane().add(label);
 		if(!won) {
 			stop = System.currentTimeMillis();
@@ -86,27 +87,28 @@ public class Timerr {
 			}
 		});
 		
-		btnStop.setBounds(232, 91, 97, 25);
+		btnStop.setBounds(349, 91, 97, 25);
 		frame.getContentPane().add(btnStop);
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(label.getText() == "Started") {
-					System.out.println("You already started timer. Click the reset button to reset timer.");
+					System.out.println("You already started the timer. Click the reset button to reset timer.");
 				}
 				else {
 				start = System.currentTimeMillis();
 				label.setText("Started");
+				label.setAlignmentX(Component.CENTER_ALIGNMENT);
 				JLabel timer;
 				timer = new JLabel("", new ImageIcon("src/msg_loader.gif"), SwingConstants.CENTER);
-				timer.setBounds(200, 300, 500, 500);
+				timer.setBounds(100, 100, 400, 500);
 				frame.getContentPane().add(timer);
 				timer.setHorizontalTextPosition(SwingConstants.LEFT);
 				timer.setVerticalTextPosition(SwingConstants.BOTTOM);
 				}
 			}
 		});
-		btnNewButton.setBounds(86, 91, 97, 25);
+		btnNewButton.setBounds(161, 91, 97, 25);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnReset = new JButton("Reset");
@@ -129,7 +131,7 @@ public class Timerr {
 				frame.dispose();
 			}
 		});
-		btnNextPage.setBounds(323, 193, 97, 25);
+		btnNextPage.setBounds(349, 193, 97, 25);
 		frame.getContentPane().add(btnNextPage);
 
 	}
