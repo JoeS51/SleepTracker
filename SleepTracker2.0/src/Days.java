@@ -43,31 +43,30 @@ public class Days {
 		initialize();
 	}
 	private void initialize() {
+		String[] header = {"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+		String[] margin = {"Average hours", "Hours for this week", "Meets reccomended", "Total hours"};
+		Object[][] info = new Object[5][8];
+		
+		for(int i=0; i< 8;i++) {
+			info[0][i] = header[i];
+			if(i>0&&i<5) {
+			info[i][0] = margin[i-1];	
+			}
+		}
 		frame = new JFrame();
-		frame.setBounds(100, 100, 767, 344);
+		frame.setBounds(100, 100, 1045, 375);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"},
-				{"Average hrs", null, null, null, null, null, null, null},
-				{"Hrs for this week", null, null, null, null, null, null, null},
-				{"Meet rec'd hours?", null, null, null, null, null, null, null},
-				{"Total hrs this week", null, null, null, null, null, null, null},
-			},
-			new String[] {
-				"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-			}
-		));
+		table.setModel(new DefaultTableModel(info, header));
 		table.getColumnModel().getColumn(0).setPreferredWidth(90);
 		table.getColumnModel().getColumn(3).setPreferredWidth(76);
 		if(input) {
 			table.setValueAt(hours, 1, column);
 		}
 		table.setRowHeight(43);
-		table.setBounds(0, 82, 749, 215);
+		table.setBounds(0, 82, 1015, 233);
 		frame.getContentPane().add(table);
 		
 		button = new JButton("<-");
@@ -96,6 +95,17 @@ public class Days {
 		});
 		lblNewLabel.setBounds(0, 0, 747, 81);
 		frame.getContentPane().add(btnRecordTime);
+		
+		JButton btnRecord = new JButton("Record");
+		btnRecord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Timerr time = new Timerr();
+				time.get().setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnRecord.setBounds(873, 13, 97, 25);
+		frame.getContentPane().add(btnRecord);
 	}	
 	
 	public JFrame get() {
