@@ -15,7 +15,9 @@ public class Days {
 	private JFrame frame;
 	private JTable table;
 	private JButton button;
-	private String day;
+	private int hours;
+	private int column;
+	private boolean input;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -30,10 +32,14 @@ public class Days {
 	}
 	
 	public Days() {
+		input = false;
 		initialize();
 	}
-	public Days(String day) {
-		this.day = day;
+	public Days(String day, int hours) {
+		System.out.println(day);
+		this.hours = hours;
+		input = true;
+		this.column = number(day);
 		initialize();
 	}
 	private void initialize() {
@@ -46,7 +52,7 @@ public class Days {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"},
-				{null , null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
@@ -59,6 +65,9 @@ public class Days {
 				"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
 			}
 		));
+		if(input) {
+			table.setValueAt(hours, 1, column);
+		}
 		table.setRowHeight(43);
 		table.getColumnModel().getColumn(0).setPreferredWidth(94);
 		table.getColumnModel().getColumn(3).setPreferredWidth(76);
@@ -95,5 +104,29 @@ public class Days {
 	
 	public JFrame get() {
 		return frame;
+	}
+	public int number(String s) {
+		if(s.equals("Mon")) {
+			return 1;
+		}
+		else if(s.equals("Tues")){
+			return 2;
+		}
+		else if(s.equals("Wed")){
+			return 3;
+		}
+		else if(s.equals("Thurs")){
+			return 4;
+		}
+		else if(s.equals("Fri")){
+			return 5;
+		}
+		else if(s.equals("Sat")){
+			return 6;
+		}
+		else if(s.equals("Sun")){
+			return 7;
+		}
+		return -1;
 	}
 }

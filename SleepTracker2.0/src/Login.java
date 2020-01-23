@@ -133,7 +133,6 @@ public class Login{
 						String p = line.substring(line.lastIndexOf(':')+2, line.length());
 						lineNum++;
 						if(userName.equals(u)&&passWord.equals(p)) { 
-							System.out.println("ho hum, i found it on line " +lineNum);
 							isUser = true;
 						}
 					}

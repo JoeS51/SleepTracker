@@ -16,6 +16,7 @@ public class Timerr {
 	private double start;
 	private double stop;
 	private boolean won = true;
+	private int hoursRecord = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -50,7 +51,6 @@ public class Timerr {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,8 +81,8 @@ public class Timerr {
 				stop = System.currentTimeMillis();
 				int seconds = (int)((stop - start)/1000)%60;
 				int minutes = (int)((stop-start)/60000)%60;
-				int hours = (int)((stop - start)/600000);
-				label.setText("Hours: "+hours+" Minutes: "+minutes + "Seconds: "+seconds);
+				hoursRecord = (int)((stop - start)/600000);
+				label.setText("Hours: "+hoursRecord+" Minutes: "+minutes + "Seconds: "+seconds);
 			}
 		});
 		
@@ -124,7 +124,7 @@ public class Timerr {
 		JButton btnNextPage = new JButton("Next Page");
 		btnNextPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Record record = new Record();
+				Record record = new Record(hoursRecord);
 				record.get().setVisible(true);
 				frame.dispose();
 			}

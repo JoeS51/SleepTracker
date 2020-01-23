@@ -12,7 +12,7 @@ public class Record {
 
 	private JFrame frame;
 	private JTextField textField;
-
+	private int hours;
 	/**
 	 * Launch the application.
 	 */
@@ -35,6 +35,10 @@ public class Record {
 	public Record() {
 		initialize();
 	}
+	public Record(int hours) {
+		this.hours = hours;
+		initialize();
+	}
 	public JFrame get() {
 		return frame;
 	}
@@ -51,7 +55,7 @@ public class Record {
 		btnRecord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String day = textField.getText();
-				Days user = new Days(day);
+				Days user = new Days(day, hours);
 				user.get().setVisible(true);
 				frame.dispose();
 			}

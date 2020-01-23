@@ -636,7 +636,7 @@ public class TicTacToeCPU {
 		}
 		return true;
 	}
-	public static void stats() {
+	public void stats() {
 		System.out.println("");
 		System.out.println("RECORD");
 		System.out.println(" X | O");
@@ -688,7 +688,8 @@ public class TicTacToeCPU {
 		}
 	}
 	public static boolean champion() {
-		if(X == 3) {
+		if(X >= 3) {
+			X = 0;
 			frame.dispose();
 			System.out.println("You won! Good Job User!");
 			Timerr back = new Timerr(time);
