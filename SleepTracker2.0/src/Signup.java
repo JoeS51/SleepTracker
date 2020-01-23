@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import org.mindrot.BCrypt;
+
 public class Signup{
 	
 //	public static File f = new File ("c:/Users/s-sluisj/user.txt");
@@ -30,13 +32,14 @@ public class Signup{
 	private static JPasswordField passwordField_1;
 	private static JTextField textField;
 	private static String passWord = "";
+	private static String hashed = "";
 	private static String userName = "";
 	/**
 	 * Launch the application.
 	 * @throws IOException 
 	 */
 	public static void main(String[] args)  {
-		
+		//String hashed = BCrypt.hashpw(passWord, BCrypt.gensalt());
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -136,8 +139,9 @@ public class Signup{
 			public void actionPerformed(ActionEvent e) {
 				userName = textField.getText();
 				passWord = passwordField_1.getText();
+				hashed = BCrypt.hashpw(passWord, BCrypt.gensalt());
 				try {
-					write(userName, passWord);
+					write(userName, hashed);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

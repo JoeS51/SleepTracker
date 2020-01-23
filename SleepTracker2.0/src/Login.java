@@ -19,6 +19,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import org.mindrot.BCrypt;
+
 public class Login{
 
 	private JFrame frame;
@@ -26,6 +28,7 @@ public class Login{
 	private JTextField textField;
 	private static String userName = "";
 	private static String passWord = "";
+	private static String hashed = "";
 	private static boolean isUser;
 	/**
 	 * Launch the application.
@@ -122,6 +125,7 @@ public class Login{
 			public void actionPerformed(ActionEvent e) {
 				userName = textField.getText();
 				passWord = passwordField_1.getText();
+				//hashed = BCrypt.hashpw(passWord, BCrypt.gensalt());
 				isUser = false;
 				File file = new File("src/users.txt");
 				try {
@@ -132,7 +136,7 @@ public class Login{
 						String u = line.substring(10, line.indexOf("Password:")-1);
 						String p = line.substring(line.lastIndexOf(':')+2, line.length());
 						lineNum++;
-						if(userName.equals(u)&&passWord.equals(p)) { 
+						if(userName.equals(u)&&BCrypt.checkpw(passWord, p)) { 
 							isUser = true;
 						}
 					}
