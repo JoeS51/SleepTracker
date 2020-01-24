@@ -690,6 +690,7 @@ public class TicTacToeCPU {
 	public static boolean champion() {
 		if(X >= 3) {
 			X = 0;
+			O = 0;
 			frame.dispose();
 			System.out.println("You won! Good Job User!");
 			Timerr back = new Timerr(time);
@@ -699,6 +700,7 @@ public class TicTacToeCPU {
 		}
 		if(O == 3) {
 			O = 0;
+			X = 0;
 			frame.dispose();
 			Timerr back = new Timerr();
 			back.get().setVisible(true);
