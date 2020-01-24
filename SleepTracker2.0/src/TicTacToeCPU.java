@@ -698,6 +698,7 @@ public class TicTacToeCPU {
 			return true;
 		}
 		if(O == 3) {
+			O = 0;
 			frame.dispose();
 			Timerr back = new Timerr();
 			back.get().setVisible(true);
