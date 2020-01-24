@@ -699,6 +699,8 @@ public class TicTacToeCPU {
 		}
 		if(O == 3) {
 			frame.dispose();
+			Timerr back = new Timerr();
+			back.get().setVisible(true);
 			System.out.println("You lost. Try again");
 			return true;
 		}
