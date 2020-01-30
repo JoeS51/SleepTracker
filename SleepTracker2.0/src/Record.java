@@ -13,6 +13,7 @@ public class Record {
 	private JFrame frame;
 	private JTextField textField;
 	private int hours;
+	private String username;
 	/**
 	 * Launch the application.
 	 */
@@ -35,8 +36,10 @@ public class Record {
 	public Record() {
 		initialize();
 	}
-	public Record(int hours) {
+	public Record(int hours, String username) {
 		this.hours = hours;
+		this.username = username;
+		System.out.println(username);
 		initialize();
 	}
 	public JFrame get() {
@@ -72,7 +75,7 @@ public class Record {
 		lblDay.setBounds(124, 85, 252, 16);
 		frame.getContentPane().add(lblDay);
 		
-		JLabel lblCongratulations = new JLabel("Congratulations, <Dynamic>");
+		JLabel lblCongratulations = new JLabel("Congratulations, "+username);
 		lblCongratulations.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblCongratulations.setBounds(50, 13, 342, 32);
 		frame.getContentPane().add(lblCongratulations);

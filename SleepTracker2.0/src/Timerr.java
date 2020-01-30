@@ -18,6 +18,7 @@ public class Timerr {
 	private double stop;
 	private boolean won = true;
 	private int hoursRecord = 0;
+	private String username;
 	/**
 	 * Launch the application.
 	 */
@@ -37,12 +38,16 @@ public class Timerr {
 	/**
 	 * Create the application.
 	 */
+	public Timerr() {
+		initialize();
+	}
 	public Timerr(double time) {
 		this.start = time;
 		won = false;
 		initialize();
 	}
-	public Timerr() {
+	public Timerr(String username) {
+		this.username = username;
 		initialize();
 	}
 	public JFrame get() {
@@ -126,7 +131,7 @@ public class Timerr {
 		JButton btnNextPage = new JButton("Next Page");
 		btnNextPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Record record = new Record(hoursRecord);
+				Record record = new Record(hoursRecord, username);
 				record.get().setVisible(true);
 				frame.dispose();
 			}

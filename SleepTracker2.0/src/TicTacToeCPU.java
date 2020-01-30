@@ -1,6 +1,8 @@
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.util.concurrent.TimeUnit;
+import java.awt.Toolkit;
 
 public class TicTacToeCPU {
 

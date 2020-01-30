@@ -89,7 +89,7 @@ public class MainPage {
 		btnWeeklyTracker.setBounds(596, 425, 139, 25);
 		btnWeeklyTracker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Days weekdays = new Days();
+				Days weekdays = new Days(username);
 				weekdays.get().setVisible(true);
 				frame.dispose();
 			}

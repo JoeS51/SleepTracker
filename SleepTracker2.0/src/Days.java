@@ -18,6 +18,7 @@ public class Days {
 	private int hours;
 	private int column;
 	private boolean input;
+	private String username;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,6 +34,11 @@ public class Days {
 	
 	public Days() {
 		input = false;
+		initialize();
+	}
+	public Days(String username) {
+		input = false;
+		this.username = username;
 		initialize();
 	}
 	public Days(String day, int hours) {
@@ -66,26 +72,26 @@ public class Days {
 			table.setValueAt(hours, 1, column);
 		}
 		
-		JButton btnRecordTime = new JButton("Record Time");
-		btnRecordTime.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Timerr record = new Timerr();
-				record.get().setVisible(true);
-				frame.dispose();
-			}
-		});
-		
+//		JButton btnRecordTime = new JButton("Record Time");
+//		btnRecordTime.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				Timerr record = new Timerr(username);
+//				record.get().setVisible(true);
+//				frame.dispose();
+//			}
+//		});
+//		
 		JButton btnRecord = new JButton("Record");
 		btnRecord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Timerr time = new Timerr();
+				Timerr time = new Timerr(username);
 				time.get().setVisible(true);
 				frame.dispose();
 			}
 		});
 		btnRecord.setBounds(919, 0, 97, 25);
 		frame.getContentPane().add(btnRecord);
-		frame.getContentPane().add(btnRecordTime);
+//		frame.getContentPane().add(btnRecordTime);
 		
 		button = new JButton("<-");
 		button.addActionListener(new ActionListener() {
