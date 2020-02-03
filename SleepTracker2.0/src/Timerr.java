@@ -85,9 +85,10 @@ public class Timerr {
 //					}
 //				}
 				stop = System.currentTimeMillis();
-				int seconds = (int)((stop - start)/1000)%60;
+				System.out.println(stop-start);
+				int seconds = (int)((stop - start)/1000);
 				int minutes = (int)((stop-start)/60000)%60;
-				hoursRecord = (int)((stop - start)/600000);
+				hoursRecord = (int)((stop - start)/3600000);
 				label.setText("Hours: "+hoursRecord+" Minutes: "+minutes + "Seconds: "+seconds);
 			}
 		});
