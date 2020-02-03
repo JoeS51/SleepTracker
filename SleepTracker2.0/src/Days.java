@@ -21,6 +21,7 @@ public class Days {
 	private boolean input;
 	private String username;
 	private boolean second;
+	private static int sum;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,10 +53,10 @@ public class Days {
 		initialize();
 	}
 	private void initialize() {
-		String[] header = {"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-		String[] margin = {"Average hours", "Hours for this week", "Meets reccomended", "Total hours"};
+		String[] header = {"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", ""};
+		String[] margin = {"Hours for this week", "Average hours", "Meets reccomended", "Total hours"};
 		if(!second) {
-			info = new Object[5][8];
+			info = new Object[5][9];
 		}
 		for(int i=0; i< 8;i++) {
 			info[0][i] = header[i];
@@ -64,7 +65,7 @@ public class Days {
 			}
 		}
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1034, 344);
+		frame.setBounds(100, 100, 1197, 344);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -73,8 +74,16 @@ public class Days {
 		table.getColumnModel().getColumn(0).setPreferredWidth(90);
 		table.getColumnModel().getColumn(3).setPreferredWidth(76);
 		if(input) {
+			sum+= hours;
 			info[1][column] = hours;
 			table.setValueAt(hours, 1, column);
+			if(hours>8) {
+				table.setValueAt("yes", 3, column);
+			}
+			else {
+				table.setValueAt("No", 3, column);
+			}
+			table.setValueAt(sum, 4, 8);
 		}
 		
 //		JButton btnRecordTime = new JButton("Record Time");
@@ -94,7 +103,7 @@ public class Days {
 				frame.dispose();
 			}
 		});
-		btnRecord.setBounds(919, 0, 97, 25);
+		btnRecord.setBounds(1043, 0, 97, 25);
 		frame.getContentPane().add(btnRecord);
 //		frame.getContentPane().add(btnRecordTime);
 		
@@ -115,7 +124,7 @@ public class Days {
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setBounds(0, 0, 1016, 81);
 		table.setRowHeight(43);
-		table.setBounds(0, 82, 1015, 233);
+		table.setBounds(0, 82, 1167, 233);
 		frame.getContentPane().add(table);
 	}	
 	
