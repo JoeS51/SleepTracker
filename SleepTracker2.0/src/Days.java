@@ -13,12 +13,14 @@ import java.awt.event.ActionEvent;
 
 public class Days {
 	private JFrame frame;
-	private JTable table;
+	private static JTable table;
 	private JButton button;
+	private static Object[][] info;
 	private int hours;
 	private int column;
 	private boolean input;
 	private String username;
+	private boolean second;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,11 +40,12 @@ public class Days {
 	}
 	public Days(String username) {
 		input = false;
+		second = false;
 		this.username = username;
 		initialize();
 	}
 	public Days(String day, int hours) {
-		System.out.println(day);
+		second = true;
 		this.hours = hours;
 		input = true;
 		this.column = number(day);
@@ -51,8 +54,9 @@ public class Days {
 	private void initialize() {
 		String[] header = {"Measurements", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 		String[] margin = {"Average hours", "Hours for this week", "Meets reccomended", "Total hours"};
-		Object[][] info = new Object[5][8];
-		
+		if(!second) {
+			info = new Object[5][8];
+		}
 		for(int i=0; i< 8;i++) {
 			info[0][i] = header[i];
 			if(i>0&&i<5) {
@@ -69,6 +73,7 @@ public class Days {
 		table.getColumnModel().getColumn(0).setPreferredWidth(90);
 		table.getColumnModel().getColumn(3).setPreferredWidth(76);
 		if(input) {
+			info[1][column] = hours;
 			table.setValueAt(hours, 1, column);
 		}
 		
