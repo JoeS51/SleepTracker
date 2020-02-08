@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JList;
 
 public class MainPage {
 	private String[] a = {"Don't drink caffeine before you go to bed", 
@@ -63,17 +64,18 @@ public class MainPage {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblHomePage = new JLabel("Welcome back, " + username, SwingConstants.CENTER);
-		lblHomePage.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblHomePage.setBounds(8, 42, 747, 50);
+		lblHomePage.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		frame.getContentPane().add(lblHomePage);
 		
 		JLabel lblTips = new JLabel("Tip: " + a[(int) (Math.random()*5)] + ".", SwingConstants.CENTER);
-		lblTips.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		lblTips.setBounds(8, 382, 727, 41);
+		lblTips.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		frame.getContentPane().add(lblTips);
 		
 		//back button (return to sign in/up)
 		JButton btnNewButton = new JButton("<-");
+		btnNewButton.setBounds(12, 13, 47, 25);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Login back = new Login();
@@ -81,7 +83,6 @@ public class MainPage {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(12, 13, 47, 25);
 		frame.getContentPane().add(btnNewButton);
 		
 		//weekly tracker button
