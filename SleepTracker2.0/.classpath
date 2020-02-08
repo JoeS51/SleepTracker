@@ -4,6 +4,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="jbcrypt-0.2.jar"/>
 	<classpathentry kind="lib" path="java-json.jar"/>
-	<classpathentry kind="src" path="/ForecastIOLibrary"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
