@@ -39,15 +39,15 @@ public class Forecast {
 	// visibility: Kilometers.
 
 	public static void main(String[] args) {
-		Forecast forecast = new Forecast(0.0, 0.0);
-		System.out.println("summary " + forecast.getSummary());
-		System.out.println("timezone " + forecast.getTimezone());
-		System.out.println("temperature " + forecast.getTemperature() + " C");
-		System.out.println("feels like " + forecast.getApparentTemperature() + " C");
-		System.out.println("closest storm " + forecast.getStormDistance() + " Km");
-		System.out.println("humidity " + forecast.getHumidity());
-		System.out.println("wind speed " + forecast.getWindSpeed() + " m/s");
-		System.out.println(forecast.getDailyIcon());
+		Forecast forecastTester = new Forecast(0.0, 0.0);
+		System.out.println("summary " + forecastTester.getSummary());
+		System.out.println("timezone " + forecastTester.getTimezone());
+		System.out.println("temperature " + forecastTester.getTemperature() + " C");
+		System.out.println("feels like " + forecastTester.getApparentTemperature() + " C");
+		System.out.println("closest storm " + forecastTester.getStormDistance() + " Km");
+		System.out.println("humidity " + forecastTester.getHumidity());
+		System.out.println("wind speed " + forecastTester.getWindSpeed() + " m/s");
+		System.out.println(forecastTester.getDailyIcon());
 	}
 
 	public Forecast(double lat, double lon) {
@@ -87,7 +87,9 @@ public class Forecast {
 		// String currentSummary = FIOR.getCurrently().getValue("summary");
 		// String firstDailyIcon = FIOR.getDaily().getData[0].getValue("icon");
 	}
-
+	public String getWeather() {
+		return currentSummary;
+	}
 	private void callData() {
 		// ability to set the units, exclude blocks, extend options and user agent for
 		// the request. This is not required.
@@ -103,35 +105,35 @@ public class Forecast {
 		FIOR = new ForecastIOResponse(responseString);
 	}
 
-	private String getSummary() {
+	public String getSummary() {
 		return currentSummary;
 	}
 
-	private String getTimezone() {
+	public String getTimezone() {
 		return timezone;
 	}
 
-	private String getTemperature() {
+	public String getTemperature() {
 		return currentTemperature;
 	}
 
-	private String getApparentTemperature() {
+	public String getApparentTemperature() {
 		return apparentTemperature;
 	}
 
-	private String getStormDistance() {
+	public String getStormDistance() {
 		return nearestStormDistance;
 	}
 
-	private String getHumidity() {
+	public String getHumidity() {
 		return humidity;
 	}
 
-	private String getWindSpeed() {
+	public String getWindSpeed() {
 		return windSpeed;
 	}
 
-	private String getDailyIcon() {
+	public String getDailyIcon() {
 		return firstDailyIcon;
 	}
 }

@@ -102,5 +102,77 @@ public class MainPage {
 		frame.getContentPane().add(sleep);
 		sleep.setHorizontalTextPosition(SwingConstants.LEFT);
 		sleep.setVerticalTextPosition(SwingConstants.BOTTOM);
+		Forecast weather = new Forecast(0,0);
+		String icon = weather.getDailyIcon();
+		if(icon.equals("partly-cloudy-day")) {
+			JLabel weatherIcon = new JLabel("", new ImageIcon("src/images.png"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("clear-day")){
+			JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("clear-night")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("rain")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("snow")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("sleet")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("wind")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("fog")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("cloudy")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
+		else if(icon.equals("partly-cloudy-night")){
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			weatherIcon.setBounds(120, 60, 400, 300);
+			frame.getContentPane().add(weatherIcon);
+			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		}
 	}
 }
