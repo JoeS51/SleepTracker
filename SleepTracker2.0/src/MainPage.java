@@ -112,63 +112,63 @@ public class MainPage {
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("clear-day")){
-			JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+			JLabel weatherIcon = new JLabel("", new ImageIcon("src/partly-sunny.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("clear-night")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/clear-night.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("rain")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/rain.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("snow")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/Snow.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("sleet")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/sleet.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("wind")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/windy.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("fog")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("cloudy")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
 			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("partly-cloudy-night")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/"), SwingConstants.CENTER);
+        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/night.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
