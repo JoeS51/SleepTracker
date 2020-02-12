@@ -105,7 +105,7 @@ public class MainPage {
 		Forecast weather = new Forecast(0,0);
 		String icon = weather.getDailyIcon();
 		if(icon.equals("partly-cloudy-day")) {
-			JLabel weatherIcon = new JLabel("", new ImageIcon("src/images.png"), SwingConstants.CENTER);
+			JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
 			weatherIcon.setBounds(120, 60, 400, 300);
 			frame.getContentPane().add(weatherIcon);
 			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
