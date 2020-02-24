@@ -39,7 +39,7 @@ public class Forecast {
 	// visibility: Kilometers.
 
 	public static void main(String[] args) {
-		Forecast forecastTester = new Forecast(0.0, 0.0);
+		Forecast forecastTester = new Forecast(40,-70);
 		System.out.println("summary " + forecastTester.getSummary());
 		System.out.println("timezone " + forecastTester.getTimezone());
 		System.out.println("temperature " + forecastTester.getTemperature() + " C");

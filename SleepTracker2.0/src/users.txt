@@ -2,3 +2,4 @@ Username: hashtest Password: $2a$10$7rfZHZpu6CwZ05HioBYtjeLfVwxIGlU9nKOsxS40lUuz
 Username: joe Password: $2a$10$3oR.TC1VWIYGAdb9Iyte7upQbX7o2YX1AaupKKoetKEEajZsdfBJS
 Username: test1 Password: $2a$10$.zJ18JLavnNy6NoSwoneienjKVDoEF9AACpUrJqIaGF2kRDkMwBKC
 Username: shruti Password: $2a$10$kSnOHzyoMfkSL1Z615FP..EXU7RSSMc.3Qyu888374KnN61xmOmfW
+Username: test Password: $2a$10$OXpZj7ENeqmbcLpm.s0fUeqkbgqvmvekt4uOhnyqNQnlkO5QkHfUW
