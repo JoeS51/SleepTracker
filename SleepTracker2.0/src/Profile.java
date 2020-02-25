@@ -183,19 +183,30 @@ public class Profile {
         BufferedReader b;
         try {
         	b = new BufferedReader(new FileReader("src/userInformation.txt"));
-        	String line = b.readLine();
-        	String temp;
-        	boolean al = false;
             fw = new FileWriter("src/userInformation.txt", true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw);
+            String line = b.readLine();
+        	String temp;
+        	boolean al = false;
+        	//check every username in the file
+        	while(line!=null) {
+        		temp = line.substring(0,line.length());
+        		System.out.println(temp);
+        		if(temp.equals(u)) {
+        			al = true;
+        		}
+        		line = b.readLine();
+        	}
             //sequence to allow username
-            if(!u.equals("")) {
-            	pw.print(u);
+        	System.out.println(al);
+        	System.out.println(u);
+            if(!u.equals("") && !al) {
+            	pw.println(u);
             	System.out.println("Data Successfully appended into file");
             }
             else {
-            	System.out.println("Nothing entered as name");
+            	System.out.println("invalid");
             }
             pw.flush();
         } finally {
