@@ -65,116 +65,126 @@ public class Profile {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 50, 1500, 1000);
+		frame.setBounds(100, 50, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JFormattedTextField formattedTextField = new JFormattedTextField();
-		formattedTextField.setBounds(650, 135, 97, 22);
+		formattedTextField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		formattedTextField.setBounds(107, 163, 955, 31);
 		frame.getContentPane().add(formattedTextField);
 		formattedTextField.setEditable(false);
 		JButton btnEditProfile = new JButton("Edit Profile");
 		btnEditProfile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(!pressed) {
-					formattedTextField.setEditable(true);
-					pressed = true;
-					btnEditProfile.setText("Done");
-					String bruh = formattedTextField.toString();
-				}
-				else {
-					formattedTextField.setEditable(false);
-					pressed = false;
-					btnEditProfile.setText("Edit Profile");
-				}
-				
-			}
+		public void actionPerformed(ActionEvent e) {
+		if(!pressed) {
+		formattedTextField.setEditable(true);
+		pressed = true;
+		btnEditProfile.setText("Done");
+		String bruh = formattedTextField.toString();
+		}
+		else {
+		formattedTextField.setEditable(false);
+		pressed = false;
+		btnEditProfile.setText("Edit Profile");
+		}
+
+		}
 		});
 		btnEditProfile.setBounds(1358, 26, 97, 25);
 		frame.getContentPane().add(btnEditProfile);
-		
-		JLabel lblName = new JLabel("Name");
-		lblName.setBounds(652, 106, 56, 16);
+
+		JLabel lblName = new JLabel("Name:");
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblName.setBounds(107, 121, 121, 36);
 		frame.getContentPane().add(lblName);
-		
-		JLabel lblUser = new JLabel(this.username + "'s Profile:");
+
+		JLabel lblUser = new JLabel((this.username + "'s Profile:"), SwingConstants.CENTER);
 		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 99));
-		lblUser.setBounds(554, 0, 1000, 109);
+		lblUser.setBounds(0, 0, 1182, 109);
 		frame.getContentPane().add(lblUser);
-		
+
+		JLabel lblAge = new JLabel("Age:");
+		lblAge.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAge.setBounds(107, 191, 121, 36);
+		frame.getContentPane().add(lblAge);
+
+		JFormattedTextField formattedTextField_1 = new JFormattedTextField();
+		formattedTextField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		formattedTextField_1.setEditable(false);
+		formattedTextField_1.setBounds(107, 232, 81, 31);
+		frame.getContentPane().add(formattedTextField_1);
+
 		Forecast weather = new Forecast(0,0);
 		String icon = weather.getDailyIcon();
 		if(icon.equals("partly-cloudy-day")) {
-			JLabel weatherIcon = new JLabel("", new ImageIcon("src/partly-sunny.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		JLabel weatherIcon = new JLabel("", new ImageIcon("src/partly-sunny.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 500, 300);
+		frame.getContentPane().add(weatherIcon);
 		}
 		else if(icon.equals("clear-day")){
-			JLabel weatherIcon = new JLabel("", new ImageIcon("src/sunny.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		JLabel weatherIcon = new JLabel("", new ImageIcon("src/sunny.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 110, 510, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("clear-night")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/clear-night.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/clear-night.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("rain")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/rain.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/rain.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("snow")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/Snow.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/Snow.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("sleet")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/sleet.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/sleet.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("wind")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/windy.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/windy.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("fog")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("cloudy")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/cloudy.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 		else if(icon.equals("partly-cloudy-night")){
-        	JLabel weatherIcon = new JLabel("", new ImageIcon("src/night.png"), SwingConstants.CENTER);
-			weatherIcon.setBounds(120, 60, 400, 300);
-			frame.getContentPane().add(weatherIcon);
-			weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
-			weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
+		        JLabel weatherIcon = new JLabel("", new ImageIcon("src/night.png"), SwingConstants.CENTER);
+		weatherIcon.setBounds(120, 60, 400, 300);
+		frame.getContentPane().add(weatherIcon);
+		weatherIcon.setHorizontalTextPosition(SwingConstants.LEFT);
+		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
-		
 	}
 	public static void write(String u) throws IOException {
 	 	FileWriter fw = null;

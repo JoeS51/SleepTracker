@@ -15,7 +15,7 @@ public class Days {
 	private JFrame frame;
 	private static JTable table;
 	private JButton button;
-	private static Object[][] info;
+	public static Object[][] info;
 	private int hours;
 	private int column;
 	private boolean input;
