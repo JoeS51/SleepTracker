@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 
@@ -90,7 +96,16 @@ public class MainPage {
 		btnWeeklyTracker.setBounds(596, 425, 139, 25);
 		btnWeeklyTracker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Days weekdays = new Days(username);
+				Days weekdays = null;
+				try {
+					weekdays = new Days(username);
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				weekdays.get().setVisible(true);
 				frame.dispose();
 			}
@@ -104,6 +119,7 @@ public class MainPage {
 		sleep.setVerticalTextPosition(SwingConstants.BOTTOM);
 		
 		JButton btnProfile = new JButton("Profile");
+		btnProfile.setBounds(638, 13, 97, 25);
 		btnProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Profile userProfile = new Profile(username);
@@ -111,7 +127,6 @@ public class MainPage {
 				frame.dispose();
 			}
 		});
-		btnProfile.setBounds(638, 13, 97, 25);
 		frame.getContentPane().add(btnProfile);
 	}
 }

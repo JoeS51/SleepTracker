@@ -9,6 +9,13 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 
 public class Days {
@@ -22,6 +29,7 @@ public class Days {
 	private String username;
 	private boolean second;
 	private static int sum;
+	private int totalHours;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,10 +47,13 @@ public class Days {
 		input = false;
 		initialize();
 	}
-	public Days(String username) {
+	public Days(String username) throws NumberFormatException, IOException {
 		input = false;
 		second = false;
 		this.username = username;
+		write("Username: "+ username + ",5");
+		this.totalHours = Integer.parseInt(recieveInformation(username, 11+username.length()));
+		//this.totalHours = 100;
 		initialize();
 	}
 	public Days(String day, int hours) {
@@ -73,8 +84,10 @@ public class Days {
 		table.setModel(new DefaultTableModel(info, header));
 		table.getColumnModel().getColumn(0).setPreferredWidth(90);
 		table.getColumnModel().getColumn(3).setPreferredWidth(76);
+		table.setValueAt(this.totalHours, 4, 8);
 		if(input) {
 			sum+= hours;
+			sum+=this.totalHours;
 			info[1][column] = hours;
 			table.setValueAt(hours, 1, column);
 			if(hours>8) {
@@ -154,5 +167,68 @@ public class Days {
 			return 7;
 		}
 		return -1;
+	}
+	public static void write(String u) throws IOException {
+	 	FileWriter fw = null;
+        BufferedWriter bw = null;
+        PrintWriter pw = null;
+        BufferedReader b;
+        try {
+        	b = new BufferedReader(new FileReader("src/userInformation.txt"));
+            fw = new FileWriter("src/userInformation.txt", true);
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);
+            String line = b.readLine();
+        	String temp;
+        	boolean al = false;
+        	//check every username in the file
+        	while(line!=null) {
+        		temp = line.substring(0,line.length());
+        		System.out.println(temp);
+        		if(temp.equals(u)) {
+        			al = true;
+        		}
+        		line = b.readLine();
+        	}
+            //sequence to allow username
+        	System.out.println(al);
+        	System.out.println(u);
+            if(!u.equals("") && !al) {
+            	pw.println(u);
+            	System.out.println("Data Successfully appended into file");
+            }
+            else {
+            	System.out.println("invalid");
+            }
+            pw.flush();
+        } finally {
+            try {
+                pw.close();
+                bw.close();
+                fw.close();
+            } catch (IOException io) {// can't do anything }
+            }
+
+        }
+	}
+	public String recieveInformation(String user, int indexStart) throws IOException {
+		String userInfo = "";
+		try {
+			BufferedReader b = new BufferedReader(new FileReader("src/userInformation.txt"));
+			String line = b.readLine();
+			boolean found = false;
+			while(!found) {
+				if(line.indexOf(user) != -1) {
+					found = true;
+					userInfo = line.substring(indexStart, line.length());
+				}
+				line = b.readLine();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userInfo;
 	}
 }
