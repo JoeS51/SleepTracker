@@ -65,7 +65,7 @@ public class Profile {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 50, 1200, 800);
+		frame.setBounds(100, 50, 1500, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
