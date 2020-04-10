@@ -60,6 +60,7 @@ public class TicTacToeCPU {
 	/**
 	 * Create the application.
 	 */
+	//double v is the time that the user was asleep
 	public TicTacToeCPU(double v) {
 		this.time = v;
 		initialize();
@@ -550,18 +551,8 @@ public class TicTacToeCPU {
 		JLabel lblTicTacToe = new JLabel("Tic Tac Toe vs CPU");
 		lblTicTacToe.setBounds(154, 13, 144, 16);
 		frame.getContentPane().add(lblTicTacToe);
-		
-//		JButton btnComputer = new JButton("1v1");
-//		btnComputer.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				frame.dispose();
-//				TicTacToe newUser = new TicTacToe();
-//				newUser.get().setVisible(true);
-//			}
-//		});
-//		btnComputer.setBounds(8, 54, 97, 25);
-//		frame.getContentPane().add(btnComputer);		
 	}
+	//determines who won that game
 	public boolean isWon(String s) {
 		boolean result = false;
 		if(a[0][0].equals(s)) {
@@ -624,6 +615,7 @@ public class TicTacToeCPU {
 		}
 		return false;
 	}
+	//determines if there is a tie
 	public static boolean full() {
 		for(int i =0; i <3;i++) {
 			for(int j = 0; j<3;j++) {
@@ -639,6 +631,7 @@ public class TicTacToeCPU {
 		}
 		return true;
 	}
+	//tells the player what the score is after every game
 	public void stats() {
 		System.out.println("");
 		System.out.println("RECORD");
@@ -646,6 +639,7 @@ public class TicTacToeCPU {
 		System.out.println(" "+X+" | "+ O);
 		System.out.println("");
 	}
+	//assigns a random move to the cpu in an open spot
 	public static void cpuTurn() {
 		int r = (int)(Math.random()*3);
 		int c = (int)(Math.random()*3);
@@ -690,6 +684,7 @@ public class TicTacToeCPU {
 			a[2][2] = "O";
 		}
 	}
+	//determines if which player has won if any(first to three wins)
 	public static boolean champion() {
 		if(X >= 3) {
 			X = 0;
