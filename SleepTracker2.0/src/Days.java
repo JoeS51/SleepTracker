@@ -47,6 +47,7 @@ public class Days {
 		input = false;
 		initialize();
 	}
+	//write user name and info into a file
 	public Days(String username) throws NumberFormatException, IOException {
 		input = false;
 		second = false;
@@ -98,16 +99,7 @@ public class Days {
 			}
 			table.setValueAt(sum, 4, 8);
 		}
-		
-//		JButton btnRecordTime = new JButton("Record Time");
-//		btnRecordTime.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				Timerr record = new Timerr(username);
-//				record.get().setVisible(true);
-//				frame.dispose();
-//			}
-//		});
-//		
+	
 		JButton btnRecord = new JButton("Record");
 		btnRecord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -140,10 +132,11 @@ public class Days {
 		table.setBounds(0, 82, 1167, 233);
 		frame.getContentPane().add(table);
 	}	
-	
+	//In order to open this class in a jframe
 	public JFrame get() {
 		return frame;
 	}
+	//this method returns the row that the hours will be recorded in
 	public int number(String s) {
 		if(s.equals("Mon")) {
 			return 1;

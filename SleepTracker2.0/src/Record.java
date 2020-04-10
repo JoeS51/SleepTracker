@@ -36,6 +36,7 @@ public class Record {
 	public Record() {
 		initialize();
 	}
+	//passes hours and username for the days class
 	public Record(int hours, String username) {
 		this.hours = hours;
 		this.username = username;

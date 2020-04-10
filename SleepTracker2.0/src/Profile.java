@@ -186,6 +186,7 @@ public class Profile {
 		weatherIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
 		}
 	}
+	//writes the information that the user passes in into userInformation file
 	public static void write(String u) throws IOException {
 	 	FileWriter fw = null;
         BufferedWriter bw = null;
