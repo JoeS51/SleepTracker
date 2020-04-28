@@ -124,7 +124,7 @@ public class Login{
 		btnSignIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				userName = textField.getText();
-				passWord = passwordField_1.getText();
+				passWord = passwordField_1.getPassword().toString();
 				//hashed = BCrypt.hashpw(passWord, BCrypt.gensalt());
 				isUser = false;
 				File file = new File("src/users.txt");
